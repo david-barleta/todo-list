@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+
+/* * {
+  border: 1px solid black;
+} */
+
+:root {
+  --header-color: #28272a;
+  --sidebar-color: #688996;
+  --todos-view-color: #cac3b8;
+  --text-color-black: #28272a;
+  --text-color-white: #f0ebe2;
+  --accent-color: #839a9b;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  display: grid;
+  grid-template: min-content 1fr / 1fr 5fr;
+}
+
+#header {
+  display: grid;
+  grid-column: span 2;
+  padding: 10px;
+  background-color: var(--header-color);
+  color: var(--text-color-white);
+  font-family: "Libre Baskerville", serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  justify-content: center;
+}
+
+#sidebar {
+  background-color: var(--sidebar-color);
+}
+
+#main-categories, #custom-categories {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: var(--text-color-white);
+  text-align: center;
+  padding: 25px;
+}
+
+#custom-categories > h6 {
+  font-family: "Libre Baskerville", serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-color-black)
+}
