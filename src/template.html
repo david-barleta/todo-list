@@ -6,8 +6,10 @@
   <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
-  <header id="header">todo dump</header>
-  <aside id="sidebar">
+  <header id="header">
+    <h1>orderly</h1>
+  </header>
+  <nav id="nav-bar">
     <section id="main-categories">
       <div>All Todos</div>
       <div>Today</div>
@@ -15,9 +17,38 @@
       <div>Important</div>
     </section>
     <section id="custom-categories">
-      <h6>Categories</h6>
+      <button id="add-category">+</button>
     </section>
-  </aside>
-  <main id="todos-view"></main>
+    <button id="new-todo-btn">New Task</button>
+  </nav>
+  <main id="todos-view">
+    <div class="todo-item">
+      <form action="">
+        <div class="title">Mag relapse sa ex</div>
+        <div class="property category">Personal</div>
+        <div class="property priority no-priority">No Priority</div>
+        <div class="property status in-progress">In Progress</div>
+        <div class="property due-date">Jan. 21, 2024</div>
+      </form>
+    </div>
+    <div class="todo-item">
+      <form action="">
+        <div class="title">Research about Microsoft Excel Macros</div>
+        <div class="property category">Work</div>
+        <div class="property priority important">Important</div>
+        <div class="property status not-started">Not Started</div>
+        <div class="property due-date">Jan. 24, 2024</div>
+      </form>
+    </div>
+    <div class="todo-item">
+      <form action="">
+        <div class="title">Prepare for internship</div>
+        <div class="property category">School</div>
+        <div class="property priority urgent">Urgent</div>
+        <div class="property status done">Done</div>
+        <div class="property due-date">Jan. 20, 2024</div>
+      </form>
+    </div>
+  </main>
 </body>
 </html>

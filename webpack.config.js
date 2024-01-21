@@ -35,7 +35,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'todo dump',
+      title: 'orderly',
       filename: 'index.html',
       template: 'src/template.html',
     }),
