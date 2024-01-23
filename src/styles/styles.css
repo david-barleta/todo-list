@@ -5,7 +5,8 @@
 } */
 
 :root {
-  --bg-color: #191919;
+  --main-bg-color: #191919;
+  --new-todo-bg-color: #202020;
   --text-color: #f0ebe2;
   --accent-color: #2383e2;
   --bg-color-red: #6e3630;
@@ -29,7 +30,7 @@ body {
   flex-direction: column;
   row-gap: 10px;
   padding: 50px;
-  background-color: var(--bg-color);
+  background-color: var(--main-bg-color);
   color: var(--text-color);
 }
 
@@ -137,4 +138,103 @@ body {
 .todo-item .done,
 .todo-item .no-priority {
   background-color: var(--bg-color-green);
+}
+
+#overlay {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4)
+}
+
+#new-todo-view {
+  background-color: var(--new-todo-bg-color);
+  border-radius: 5px;
+  padding: 50px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min-content;
+  height: min-content;
+}
+
+#new-todo-view > form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+#new-todo-view form input[type=text] {
+  border: none;
+  background: none;
+  padding: 0px;
+  color: var(--text-color);
+  width: 100%;
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+::placeholder {
+  color: var(--text-color);
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+}
+
+#new-todo-view > form > #properties {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+#new-todo-view > form > #properties div {
+  display: flex;
+}
+
+#new-todo-view form label {
+  font-family: "Libre Baskerville", serif;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 125px;
+}
+
+#new-todo-view form select,
+#new-todo-view form input[type=date] {
+  background-color: var(--new-todo-bg-color);
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: .90rem;
+  color: var(--text-color);
+  width: fit-content;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  margin-left: -20px;
+}
+
+#new-todo-view form button {
+  width: 45px;
+  position: absolute;
+  right: 3%;
+  top: 4%;
+  margin-left: auto;
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 5px;
+  padding: 3px 0px 3px 0px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  color: var(--text-color);
+  cursor: pointer;
 }

@@ -8,9 +8,9 @@ class TodoItem {
   }
 }
 
-function handleCreateTodo() {
+function handleCreateNewTodo() {
   const todoItem = new TodoItem("Research companies", "School", "Important", "To do", "Tuesday");
   console.log(todoItem);
 }
 
-export default handleCreateTodo;
+export default handleCreateNewTodo;

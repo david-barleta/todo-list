@@ -19,7 +19,7 @@
     <section id="custom-categories">
       <button id="add-category">+</button>
     </section>
-    <button id="new-todo-btn">New Task</button>
+    <button id="new-todo-btn">New To-do</button>
   </nav>
   <main id="todos-view">
     <div class="todo-item">
@@ -31,24 +31,84 @@
         <div class="property due-date">Jan. 21, 2024</div>
       </form>
     </div>
-    <div class="todo-item">
-      <form action="">
-        <div class="title">Research about Microsoft Excel Macros</div>
-        <div class="property category">Work</div>
-        <div class="property priority important">Important</div>
-        <div class="property status not-started">Not Started</div>
-        <div class="property due-date">Jan. 24, 2024</div>
-      </form>
-    </div>
-    <div class="todo-item">
-      <form action="">
-        <div class="title">Prepare for internship</div>
-        <div class="property category">School</div>
-        <div class="property priority urgent">Urgent</div>
-        <div class="property status done">Done</div>
-        <div class="property due-date">Jan. 20, 2024</div>
-      </form>
-    </div>
   </main>
+  <!-- <div id="overlay">
+    <div id="new-todo-view">
+      <form action="">
+        <div>
+          <input type="text" id="title" name="title" placeholder="Untitled Todo" />
+        </div>
+        <div id="properties">
+          <div>
+            <label for="category">Category</label>
+            <select name="category" id="category">
+              <option value="uncategorized">Uncategorized</option>
+            </select>
+          </div>
+          <div>
+            <label for="priority">Priority</label>
+            <select name="priority" id="priority">
+              <option value="no-priority">No Priority</option>
+              <option value="important">Important</option>
+              <option value="urgent">Urgent</option>
+            </select>
+          </div>
+          <div>
+            <label for="status">Status</label>
+            <select name="status" id="status">
+              <option value="not-started">Not Started</option>
+              <option value="in-progress">In Progress</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+          <div>
+            <label for="due-date">Due Date</label>
+            <input type="date" id="due-date" name="due-date" />
+          </div>
+        </div>
+        <button type="submit" id="add-todo-btn">Add To-do</button>
+      </form>
+    </div>
+  </div> -->
+  <template>
+    <div id="overlay">
+      <div id="new-todo-view">
+        <form action="">
+          <div>
+            <input type="text" id="title" name="title" placeholder="Untitled Todo" />
+          </div>
+          <div id="properties">
+            <div>
+              <label for="category">Category</label>
+              <select name="category" id="category">
+                <option value="uncategorized">Uncategorized</option>
+              </select>
+            </div>
+            <div>
+              <label for="priority">Priority</label>
+              <select name="priority" id="priority">
+                <option value="no-priority">No Priority</option>
+                <option value="important">Important</option>
+                <option value="urgent">Urgent</option>
+              </select>
+            </div>
+            <div>
+              <label for="status">Status</label>
+              <select name="status" id="status">
+                <option value="not-started">Not Started</option>
+                <option value="in-progress">In Progress</option>
+                <option value="done">Done</option>
+              </select>
+            </div>
+            <div>
+              <label for="due-date">Due Date</label>
+              <input type="date" id="due-date" name="due-date" />
+            </div>
+          </div>
+          <button type="submit" id="add-todo-btn">Done</button>
+        </form>
+      </div>
+    </div>
+  </template>
 </body>
 </html>
