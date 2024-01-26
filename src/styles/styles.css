@@ -81,30 +81,7 @@ body {
   row-gap: 10px;
 }
 
-/* #create-todo {
-  width: 70px;
-  height: 70px;
-  border: none;
-  border-radius: 50px;
-  font-size: 3rem;
-  font-family: "Montserrat", sans-serif;
-  position: absolute;
-  bottom: 25px;
-  right: 25px;
-  cursor: pointer;
-} */
-
-/* .new-todo {
-  width: min-content;
-  height: min-content;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-} */
-
-.todo-item form {
+.todo-item {
   display: flex;
   column-gap: 10px;
   font-size: 0.90rem;
@@ -112,7 +89,7 @@ body {
   align-items: center;
 }
 
-.todo-item form div:first-child {
+.todo-item div:first-child {
   margin-right: auto;
 }
 

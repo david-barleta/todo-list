@@ -1,3 +1,6 @@
+export const todos = [];
+export const customCategories = [];
+
 class TodoItem {
   constructor(title, category, priority, status, dueDate) {
     this.title = title;
@@ -8,9 +11,13 @@ class TodoItem {
   }
 }
 
-function handleCreateNewTodo() {
-  const todoItem = new TodoItem("Research companies", "School", "Important", "To do", "Tuesday");
-  console.log(todoItem);
+export function handleCreateNewTodo({
+  title,
+  category,
+  priority,
+  status,
+  dueDate,
+}) {
+  const todoItem = new TodoItem(title, category, priority, status, dueDate);
+  todos.push(todoItem);
 }
-
-export default handleCreateNewTodo;

@@ -22,71 +22,40 @@
     <button id="new-todo-btn">New To-do</button>
   </nav>
   <main id="todos-view">
-    <div class="todo-item">
-      <form action="">
-        <div class="title">Mag relapse sa ex</div>
-        <div class="property category">Personal</div>
-        <div class="property priority no-priority">No Priority</div>
-        <div class="property status in-progress">In Progress</div>
-        <div class="property due-date">Jan. 21, 2024</div>
-      </form>
-    </div>
+    <!-- <div class="todo-item">
+      <div class="title">Mag relapse sa ex</div>
+      <div class="property category">Personal</div>
+      <div class="property priority no-priority">No Priority</div>
+      <div class="property status in-progress">In Progress</div>
+      <div class="property due-date">Jan. 21, 2024</div>
+    </div> -->
   </main>
-  <!-- <div id="overlay">
-    <div id="new-todo-view">
-      <form action="">
-        <div>
-          <input type="text" id="title" name="title" placeholder="Untitled Todo" />
-        </div>
-        <div id="properties">
-          <div>
-            <label for="category">Category</label>
-            <select name="category" id="category">
-              <option value="uncategorized">Uncategorized</option>
-            </select>
-          </div>
-          <div>
-            <label for="priority">Priority</label>
-            <select name="priority" id="priority">
-              <option value="no-priority">No Priority</option>
-              <option value="important">Important</option>
-              <option value="urgent">Urgent</option>
-            </select>
-          </div>
-          <div>
-            <label for="status">Status</label>
-            <select name="status" id="status">
-              <option value="not-started">Not Started</option>
-              <option value="in-progress">In Progress</option>
-              <option value="done">Done</option>
-            </select>
-          </div>
-          <div>
-            <label for="due-date">Due Date</label>
-            <input type="date" id="due-date" name="due-date" />
-          </div>
-        </div>
-        <button type="submit" id="add-todo-btn">Add To-do</button>
-      </form>
+  <template id="todo-item-template">
+    <div class="todo-item">
+      <div class="title"></div>
+      <div class="property category"></div>
+      <div class="property priority"></div>
+      <div class="property status"></div>
+      <div class="property due-date"></div>
     </div>
-  </div> -->
-  <template>
+  </template>
+  <template id="new-todo-template">
     <div id="overlay">
       <div id="new-todo-view">
-        <form action="">
+        <form>
           <div>
-            <input type="text" id="title" name="title" placeholder="Untitled Todo" />
+            <input type="text" id="title" name="title" placeholder="Untitled Todo" required />
           </div>
           <div id="properties">
             <div>
               <label for="category">Category</label>
-              <select name="category" id="category">
+              <select name="category" id="category" required>
                 <option value="uncategorized">Uncategorized</option>
               </select>
             </div>
             <div>
               <label for="priority">Priority</label>
-              <select name="priority" id="priority">
+              <select name="priority" id="priority" required>
                 <option value="no-priority">No Priority</option>
                 <option value="important">Important</option>
                 <option value="urgent">Urgent</option>
@@ -94,15 +63,15 @@
             </div>
             <div>
               <label for="status">Status</label>
-              <select name="status" id="status">
+              <select name="status" id="status" required>
                 <option value="not-started">Not Started</option>
                 <option value="in-progress">In Progress</option>
                 <option value="done">Done</option>
               </select>
             </div>
             <div>
-              <label for="due-date">Due Date</label>
-              <input type="date" id="due-date" name="due-date" />
+              <label for="dueDate">Due Date</label>
+              <input type="date" id="dueDate" name="dueDate" required />
             </div>
           </div>
           <button type="submit" id="add-todo-btn">Done</button>
