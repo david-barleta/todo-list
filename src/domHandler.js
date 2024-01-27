@@ -67,12 +67,19 @@ function handleSubmit(event) {
   displayTodos();
 }
 
+function handleCancel() {
+  const newTodoModal = document.querySelector("#new-todo-modal");
+  newTodoModal.remove();
+  console.log("removed");
+}
+
 // Show modal for creating a new to-do
 
 document.querySelector("#new-todo-btn").addEventListener("click", () => {
   const newTodoTemplate = document.querySelector("#new-todo-template");
-  const newTodoWindow = newTodoTemplate.content.cloneNode(true);
-  document.body.appendChild(newTodoWindow);
+  const newTodoModal = newTodoTemplate.content.cloneNode(true);
+  document.body.appendChild(newTodoModal);
 
   document.querySelector("form").addEventListener("submit", handleSubmit);
+  document.querySelector("#cancel-btn").addEventListener("click", handleCancel);
 });

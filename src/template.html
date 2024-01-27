@@ -41,7 +41,7 @@
   </template>
   <template id="new-todo-template">
     <div id="overlay">
-      <div id="new-todo-view">
+      <div id="new-todo-modal">
         <form>
           <div>
             <input type="text" id="title" name="title" placeholder="Untitled Todo" required />
@@ -74,10 +74,50 @@
               <input type="date" id="dueDate" name="dueDate" required />
             </div>
           </div>
+          <button type="button" id="cancel-btn">✕</button>
           <button type="submit" id="add-todo-btn">Done</button>
         </form>
       </div>
     </div>
   </template>
+  <!-- <div id="overlay">
+    <div id="new-todo-modal">
+      <form>
+        <div>
+          <input type="text" id="title" name="title" placeholder="Untitled Todo" required />
+        </div>
+        <div id="properties">
+          <div>
+            <label for="category">Category</label>
+            <select name="category" id="category" required>
+              <option value="uncategorized">Uncategorized</option>
+            </select>
+          </div>
+          <div>
+            <label for="priority">Priority</label>
+            <select name="priority" id="priority" required>
+              <option value="no-priority">No Priority</option>
+              <option value="important">Important</option>
+              <option value="urgent">Urgent</option>
+            </select>
+          </div>
+          <div>
+            <label for="status">Status</label>
+            <select name="status" id="status" required>
+              <option value="not-started">Not Started</option>
+              <option value="in-progress">In Progress</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+          <div>
+            <label for="dueDate">Due Date</label>
+            <input type="date" id="dueDate" name="dueDate" required />
+          </div>
+        </div>
+        <button type="button" id="cancel-btn">✕</button>
+        <button type="submit" id="add-todo-btn">Done</button>
+      </form>
+    </div>
+  </div> -->
 </body>
 </html>
