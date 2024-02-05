@@ -84,9 +84,16 @@ body {
 .todo-item {
   display: flex;
   column-gap: 10px;
+  border-radius: 5px;
+  padding: 5px 0px 5px 5px;
   font-size: 0.90rem;
   font-family: "Montserrat", sans-serif;
   align-items: center;
+}
+
+.todo-item:hover {
+  background-color: var(--new-todo-bg-color);
+  cursor: pointer;
 }
 
 .todo-item div:first-child {
@@ -127,10 +134,10 @@ body {
   background-color: rgba(0, 0, 0, 0.4)
 }
 
-#new-todo-modal {
+.todo-modal {
   background-color: var(--new-todo-bg-color);
   border-radius: 5px;
-  padding: 50px;
+  padding: 60px 50px 50px 50px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -139,13 +146,13 @@ body {
   height: min-content;
 }
 
-#new-todo-modal > form {
+.todo-modal > form {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
 }
 
-#new-todo-modal form input[type=text] {
+.todo-modal form input[type=text] {
   border: none;
   background: none;
   padding: 0px;
@@ -168,25 +175,25 @@ select:focus {
   outline: none;
 }
 
-#new-todo-modal > form > #properties {
+.todo-modal > form > #properties {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
 }
 
-#new-todo-modal > form > #properties div {
+.todo-modal > form > #properties div {
   display: flex;
 }
 
-#new-todo-modal form label {
+.todo-modal form label {
   font-family: "Libre Baskerville", serif;
   font-size: 1rem;
   font-weight: bold;
   width: 125px;
 }
 
-#new-todo-modal form select,
-#new-todo-modal form input[type=date] {
+.todo-modal form select,
+.todo-modal form input[type=date] {
   background-color: var(--new-todo-bg-color);
   border: none;
   font-family: "Montserrat", sans-serif;
@@ -198,6 +205,22 @@ select:focus {
 ::-webkit-calendar-picker-indicator {
   filter: invert(1);
   margin-left: -20px;
+}
+
+.submit-btn {
+  width: 45px;
+  position: absolute;
+  right: 3%;
+  top: 4%;
+  margin-left: auto;
+  background-color: var(--bg-color-green);
+  border: none;
+  border-radius: 5px;
+  padding: 3px 0px 3px 0px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  color: var(--text-color);
+  cursor: pointer;
 }
 
 #new-todo-modal > form > #cancel-btn {
@@ -215,13 +238,13 @@ select:focus {
   cursor: pointer;
 }
 
-#new-todo-modal > form > #add-todo-btn {
-  width: 45px;
+#edit-todo-modal > form > #delete-btn {
+  width: 50px;
   position: absolute;
-  right: 3%;
+  left: 3.50%;
   top: 4%;
   margin-left: auto;
-  background-color: var(--bg-color-green);
+  background-color: var(--bg-color-red);
   border: none;
   border-radius: 5px;
   padding: 3px 0px 3px 0px;
