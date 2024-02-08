@@ -43,12 +43,12 @@ body {
   display: flex;
   column-gap: 20px;
   align-items: center;
-  padding-bottom: 5px;
+  padding-bottom: 7px;
   margin-bottom: 15px;
   border-bottom: 1px solid #b4b1aa;
 }
 
-#main-categories, #custom-categories {
+#categories {
   display: flex;
   column-gap: 20px;
   font-family: "Montserrat", sans-serif;
@@ -56,11 +56,19 @@ body {
   color: var(--text-color-white);
 }
 
-#custom-categories > button {
-  background: none;
+#categories button {
   border: none;
+  padding: 0;
+  background: none;
+  font-weight: bold;
   color: var(--text-color-white);
-  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#categories select {
+  background-color: var(--main-bg-color);
+  border: none;
+  color: var(--text-color);
 }
 
 #new-todo-btn {
@@ -163,7 +171,7 @@ body {
   font-weight: bold;
 }
 
-::placeholder {
+.todo-modal form input[type=text]::placeholder {
   color: var(--text-color);
   font-size: 2rem;
   font-family: "Montserrat", sans-serif;
@@ -250,6 +258,79 @@ select:focus {
   padding: 3px 0px 3px 0px;
   font-family: "Montserrat", sans-serif;
   font-size: 0.75rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+#edit-categories-modal {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  font-family: "Montserrat", sans-serif;
+}
+
+#edit-categories-modal > #custom-categories {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+#edit-categories-modal #custom-categories div,
+#add-category-div {
+  display: flex;
+  column-gap: 50px;
+}
+
+#edit-categories-modal > #custom-categories div button {
+  width: 50px;
+  margin-left: auto;
+  border: none;
+  background-color: var(--bg-color-red);
+  border: none;
+  border-radius: 5px;
+  padding: 3px 0px 3px 0px;
+  font-size: 0.75rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+#add-category-div > input[type=text] {
+  border: none;
+  background: none;
+  padding: 0px;
+  color: var(--text-color);
+  width: 150px;
+  font-size: 1rem;
+}
+
+#edit-categories-modal div input[type=text]::placeholder {
+  color: var(--text-color);
+}
+
+#edit-categories-modal div #add-category-btn {
+  width: 50px;
+  margin-left: auto;
+  border: none;
+  background-color: var(--bg-color-green);
+  border: none;
+  border-radius: 5px;
+  padding: 3px 0px 3px 0px;
+  font-size: 0.75rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+#edit-categories-modal > #cancel-btn {
+  width: 25px;
+  position: absolute;
+  left: 2%;
+  top: 3%;
+  margin-left: auto;
+  background-color: transparent;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  /* font-weight: bold; */
   color: var(--text-color);
   cursor: pointer;
 }

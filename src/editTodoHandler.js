@@ -1,4 +1,5 @@
 import { todos, handleEditTodo } from "./todoItems";
+import handleAddCategoryOptions from "./categoriesHandler";
 
 // function handleDelete(event) {
 //   const todoWindow = document.querySelector("#overlay");
@@ -17,6 +18,8 @@ function handleEdit(event) {
   const editTodoTemplate = document.querySelector("#edit-todo-template");
   const editTodoModal = editTodoTemplate.content.cloneNode(true);
   document.body.appendChild(editTodoModal);
+
+  handleAddCategoryOptions();
 
   const { index } = event.target.dataset;
 

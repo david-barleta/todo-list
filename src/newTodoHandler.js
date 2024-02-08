@@ -1,4 +1,5 @@
 import { handleCreateNewTodo } from "./todoItems";
+import handleAddCategoryOptions from "./categoriesHandler";
 
 
 function handleCancel() {
@@ -29,6 +30,8 @@ document.querySelector("#new-todo-btn").addEventListener("click", () => {
   const newTodoTemplate = document.querySelector("#new-todo-template");
   const newTodoModal = newTodoTemplate.content.cloneNode(true);
   document.body.appendChild(newTodoModal);
+
+  handleAddCategoryOptions();
 
   document.querySelector("form").addEventListener("submit", handleSubmit);
   document.querySelector("#cancel-btn").addEventListener("click", handleCancel);

@@ -38,11 +38,7 @@ function displayTodos() {
 
 const todoList = document.querySelector("#todos-view");
 
-todoList.addEventListener(
-  "displayTodos",
-  () => {
-    clearTodos();
-    displayTodos();
-  },
-  false, // Executed during the bubbling phase
-);
+todoList.addEventListener("displayTodos", () => {
+  clearTodos();
+  displayTodos();
+}, false); // Executed during the bubbling phase

@@ -10,14 +10,24 @@
     <h1>orderly</h1>
   </header>
   <nav id="nav-bar">
-    <section id="main-categories">
-      <div>All Todos</div>
-      <div>Today</div>
-      <div>This Week</div>
-      <div>Important</div>
-    </section>
-    <section id="custom-categories">
-      <button id="add-category">+</button>
+    <section id="categories">
+      <button type="All Todos">All Todos</button>
+      <button type="Today">Today</button>
+      <button type="This Week">This Week</button>
+      <select class="custom-filter" id="priority-filter">
+        <option>No Priority</option>
+        <option>Important</option>
+        <option>Urgent</option>
+      </select>
+      <select class="custom-filter" id="status-filter">
+        <option>Not Started</option>
+        <option>In Progress</option>
+        <option>Done</option>
+      </select>
+      <select class="custom-filter" id="categories-filter">
+        <option>Uncategorized</option>
+      </select>
+      <button type="button" id="add-category">Add Category</button>
     </section>
     <button id="new-todo-btn">New To-do</button>
   </nav>
@@ -40,7 +50,7 @@
     </div>
   </template>
   <template id="new-todo-template">
-    <div id="overlay">
+    <div id="overlay"> <!--Change to class?-->
       <div class="todo-modal" id="new-todo-modal">
         <form>
           <div>
@@ -50,7 +60,6 @@
             <div>
               <label for="category">Category</label>
               <select name="category" id="category" required>
-                <option value="uncategorized">Uncategorized</option>
               </select>
             </div>
             <div>
@@ -91,7 +100,6 @@
             <div>
               <label for="category">Category</label>
               <select name="category" id="category" required>
-                <option value="uncategorized">Uncategorized</option>
               </select>
             </div>
             <div>
@@ -118,6 +126,19 @@
           <button type="button" id="delete-btn">Delete</button>
           <button type="submit" class="submit-btn">Done</button>
         </form>
+      </div>
+    </div>
+  </template>
+  <template id="edit-categories-template">
+    <div id="overlay">
+      <div class="todo-modal" id="edit-categories-modal">
+        <div id="custom-categories">
+        </div>
+        <div id="add-category-div">
+          <input type="text" id="add-category-input" placeholder="New Category">
+          <button type="button" id="add-category-btn">Add</button>
+        </div>
+        <button type="button" id="cancel-btn">✕</button>
       </div>
     </div>
   </template>
@@ -197,6 +218,24 @@
           <button type="button" id="delete-btn">Delete</button>
           <button type="submit" id="add-todo-btn">Done</button>
         </form>
+      </div>
+    </div> -->
+    <!-- <div id="overlay">
+      <div class="todo-modal" id="edit-categories-modal">
+        <div id="custom-categories">
+          <div>
+            <div class="category">Uncategorized</div>
+            <button type="button" class="delete-btn">Delete</button>
+          </div>
+          <div>
+            <div class="category">Test Category</div>
+            <button type="button" class="delete-btn">Delete</button>
+          </div>
+        </div>
+        <div id="add-category-input">
+          <input type="text" placeholder="New Category">
+          <button type="button" id="add-category-btn">Add</button>
+        </div>
       </div>
     </div> -->
 </body>

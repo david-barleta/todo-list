@@ -1,7 +1,7 @@
 const todos = [];
 
 const customCategories = {
-  "uncategorized": "Uncategorized"
+  "uncategorized": "Uncategorized",
 };
 
 const priorityList = {
