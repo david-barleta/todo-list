@@ -1,18 +1,6 @@
 import { todos, handleEditTodo } from "./todoItems";
 import handleAddCategoryOptions from "./categoriesHandler";
-
-// function handleDelete(event) {
-//   const todoWindow = document.querySelector("#overlay");
-//   todoWindow.remove();
-
-//   const submitEvent = new Event("displayTodos");
-
-//   const todoList = document.querySelector("#todos-view");
-
-//   todoList.dispatchEvent(submitEvent);
-
-//   console.log(todos);
-// }
+import { saveTodos } from "./localStorageHandler";
 
 function handleEdit(event) {
   const editTodoTemplate = document.querySelector("#edit-todo-template");
@@ -44,6 +32,7 @@ function handleEdit(event) {
     const editedTodoProperties = Object.fromEntries(editedTodoData.entries());
 
     handleEditTodo(editedTodoProperties, index);
+    saveTodos();
 
     const todoWindow = document.querySelector("#overlay");
     todoWindow.remove();
@@ -60,6 +49,8 @@ function handleEdit(event) {
 
     todos.splice(index, 1);
 
+    saveTodos();
+
     const todoWindow = document.querySelector("#overlay");
     todoWindow.remove();
 
@@ -68,7 +59,6 @@ function handleEdit(event) {
     const todoList = document.querySelector("#todos-view");
 
     todoList.dispatchEvent(submitEvent);
-
   });
 }
 

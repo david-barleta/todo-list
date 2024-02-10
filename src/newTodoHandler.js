@@ -1,5 +1,6 @@
 import { handleCreateNewTodo } from "./todoItems";
 import handleAddCategoryOptions from "./categoriesHandler";
+import { saveTodos } from "./localStorageHandler";
 
 
 function handleCancel() {
@@ -15,6 +16,7 @@ function handleSubmit(event) {
   const newTodoProperties = Object.fromEntries(newTodoData.entries());
 
   handleCreateNewTodo(newTodoProperties);
+  saveTodos();
 
   const todoWindow = document.querySelector("#overlay");
   todoWindow.remove();

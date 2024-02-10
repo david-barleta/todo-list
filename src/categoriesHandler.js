@@ -1,4 +1,5 @@
 import { customCategories } from "./todoItems";
+import { saveCustomCategories } from "./localStorageHandler";
 
 const categoriesFilter = document.querySelector("#categories-filter");
 
@@ -18,6 +19,8 @@ function deleteCategory(event) {
   const propertyName = categoryToDelete.dataset.category;
 
   delete customCategories[propertyName];
+
+  saveCustomCategories();
 
   const displayEvent = new Event("displayCategories");
   categoriesFilter.dispatchEvent(displayEvent);
@@ -59,6 +62,8 @@ function handleAddCategory() {
     const propertyName = `${newCategoryLabel.value}`;
 
     customCategories[propertyName] = `${newCategoryLabel.value}`;
+
+    saveCustomCategories();
 
     newCategoryLabel.value = "";
 

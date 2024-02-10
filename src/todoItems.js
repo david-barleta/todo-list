@@ -5,21 +5,7 @@
 
 const todos = [
   {
-    "title": "School task",
-    "category": "uncategorized",
-    "priority": "important",
-    "status": "in-progress",
-    "dueDate": "2021-12-06"
-  },
-  {
-    "title": "Work task",
-    "category": "uncategorized",
-    "priority": "urgent",
-    "status": "in-progress",
-    "dueDate": "2021-12-06"
-  },
-  {
-    "title": "Hobby task",
+    "title": "Uncategorized task",
     "category": "uncategorized",
     "priority": "important",
     "status": "in-progress",
@@ -29,14 +15,14 @@ const todos = [
     "title": "School task",
     "category": "uncategorized",
     "priority": "urgent",
-    "status": "done",
+    "status": "in-progress",
     "dueDate": "2021-12-06"
   },
   {
     "title": "Work task",
     "category": "uncategorized",
     "priority": "important",
-    "status": "done",
+    "status": "in-progress",
     "dueDate": "2021-12-06"
   },
   {
@@ -45,70 +31,7 @@ const todos = [
     "priority": "urgent",
     "status": "done",
     "dueDate": "2021-12-06"
-  },
-    {
-    "title": "Work task",
-    "category": "uncategorized",
-    "priority": "important",
-    "status": "done",
-    "dueDate": "2021-12-06"
-  },
-      {
-    "title": "Work task",
-    "category": "uncategorized",
-    "priority": "important",
-    "status": "done",
-    "dueDate": "2021-12-06"
-  },
-        {
-    "title": "Work task",
-    "category": "uncategorized",
-    "priority": "important",
-    "status": "done",
-    "dueDate": "2021-12-06"
-  },
-          {
-    "title": "Work task",
-    "category": "uncategorized",
-    "priority": "important",
-    "status": "done",
-    "dueDate": "2021-12-06"
-  },
-            {
-    "title": "Work task",
-    "category": "uncategorized",
-    "priority": "important",
-    "status": "done",
-    "dueDate": "2021-12-06"
-  },
-              {
-    "title": "Work task",
-    "category": "uncategorized",
-    "priority": "important",
-    "status": "done",
-    "dueDate": "2021-12-06"
-  },
-                {
-    "title": "Work task",
-    "category": "uncategorized",
-    "priority": "important",
-    "status": "done",
-    "dueDate": "2021-12-06"
-  },
-                  {
-    "title": "Work task",
-    "category": "uncategorized",
-    "priority": "important",
-    "status": "done",
-    "dueDate": "2021-12-06"
-  },
-                    {
-    "title": "Work task",
-    "category": "uncategorized",
-    "priority": "important",
-    "status": "done",
-    "dueDate": "2021-12-06"
-  },
+  }
 ];
 
 const customCategories = {
@@ -147,8 +70,6 @@ function handleCreateNewTodo({
 }) {
   const todoItem = new TodoItem(title, category, priority, status, dueDate);
   todos.push(todoItem);
-
-  console.log(todoItem);
 }
 
 function handleEditTodo({

@@ -4,3 +4,4 @@ import "./newTodoHandler";
 import "./todoListHandler";
 import "./categoriesHandler";
 import "./filterHandler";
+import "./localStorageHandler";
