@@ -26,17 +26,19 @@ function deleteCategory(event) {
 function displayCategories() {
   const customCategoriesArray = Object.keys(customCategories);
 
-  for (let i = 0; i < customCategoriesArray.length; i += 1) {
+  for (let i = 1; i < customCategoriesArray.length; i += 1) {
     const categoryDiv = document.createElement("div");
 
-    const categoryLabel = document.createElement("div");
-    categoryLabel.classList.add("category");
-    categoryLabel.textContent = `${customCategories[customCategoriesArray[i]]}`
-    categoryLabel.setAttribute("data-category", `${customCategoriesArray[i]}`);
+    if (customCategoriesArray[i] !== "default") {
+      const categoryLabel = document.createElement("div");
+      categoryLabel.classList.add("category");
+      categoryLabel.textContent = `${customCategories[customCategoriesArray[i]]}`
+      categoryLabel.setAttribute("data-category", `${customCategoriesArray[i]}`);
 
-    categoryDiv.appendChild(categoryLabel);
+      categoryDiv.appendChild(categoryLabel);
+    }
 
-    if (customCategoriesArray[i] !== "uncategorized") {
+    if (customCategoriesArray[i] !== "uncategorized" && customCategoriesArray[i] !== "default") {
       const deleteBtn = document.createElement("button");
       deleteBtn.classList.add("delete-btn");
       deleteBtn.type = "button";
@@ -61,6 +63,7 @@ function handleAddCategory() {
     newCategoryLabel.value = "";
 
     const displayEvent = new Event("displayCategories");
+
     categoriesFilter.dispatchEvent(displayEvent);
 
     categoriesFilter.replaceChildren();
@@ -71,6 +74,8 @@ function handleAddCategory() {
 
       const option = document.createElement("option");
       option.textContent = `${customCategories[customCategoriesArray[i]]}`;
+      option.setAttribute("value", customCategoriesArray[i]);
+
 
       categoriesFilter.appendChild(option);
     }
@@ -83,11 +88,14 @@ export default function handleAddCategoryOptions() {
   const customCategoriesArray = Object.keys(customCategories);
 
   for (let i = 0; i < customCategoriesArray.length; i += 1) {
-    const option = document.createElement("option");
-    option.textContent = `${customCategories[customCategoriesArray[i]]}`;
-    option.setAttribute("value", customCategoriesArray[i]);
 
-    categorySelect.appendChild(option);
+    if (customCategoriesArray[i] !== "default") {
+      const option = document.createElement("option");
+      option.textContent = `${customCategories[customCategoriesArray[i]]}`;
+      option.setAttribute("value", customCategoriesArray[i]);
+
+      categorySelect.appendChild(option);
+    }
   }
 }
 

@@ -1,6 +1,55 @@
-const todos = [];
+// 1, 3, 5 important
+// 2, 4, 6 urgent
+// 1, 2, 3 in-progress
+// 4, 5, 6 done
+
+const todos = [
+  {
+    "title": "Test 1",
+    "category": "uncategorized",
+    "priority": "important",
+    "status": "in-progress",
+    "dueDate": "2024-02-10"
+  },
+  {
+    "title": "Test 2",
+    "category": "uncategorized",
+    "priority": "urgent",
+    "status": "in-progress",
+    "dueDate": "2024-02-10"
+  },
+  {
+    "title": "Test 3",
+    "category": "uncategorized",
+    "priority": "important",
+    "status": "in-progress",
+    "dueDate": "2024-02-10"
+  },
+  {
+    "title": "Test 4",
+    "category": "uncategorized",
+    "priority": "urgent",
+    "status": "done",
+    "dueDate": "2024-02-10"
+  },
+  {
+    "title": "Test 5",
+    "category": "uncategorized",
+    "priority": "important",
+    "status": "done",
+    "dueDate": "2024-02-10"
+  },
+  {
+    "title": "Test 6",
+    "category": "uncategorized",
+    "priority": "urgent",
+    "status": "done",
+    "dueDate": "2024-02-10"
+  }
+];
 
 const customCategories = {
+  "default": "Category",
   "uncategorized": "Uncategorized",
 };
 
@@ -35,6 +84,8 @@ function handleCreateNewTodo({
 }) {
   const todoItem = new TodoItem(title, category, priority, status, dueDate);
   todos.push(todoItem);
+
+  console.log(todoItem);
 }
 
 function handleEditTodo({
@@ -46,17 +97,11 @@ function handleEditTodo({
 }, index) {
   const todoItem = todos[index];
 
-  console.log(todoItem);
-
   todoItem.title = title;
   todoItem.category = category;
   todoItem.priority = priority;
   todoItem.status = status;
   todoItem.dueDate = dueDate;
-
-  console.log(todoItem);
-
-  console.log(todos);
 }
 
 export { todos, customCategories, priorityList, statusList, handleCreateNewTodo, handleEditTodo };

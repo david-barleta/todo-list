@@ -11,21 +11,22 @@
   </header>
   <nav id="nav-bar">
     <section id="categories">
-      <button type="All Todos">All Todos</button>
-      <button type="Today">Today</button>
-      <button type="This Week">This Week</button>
-      <select class="custom-filter" id="priority-filter">
-        <option>No Priority</option>
-        <option>Important</option>
-        <option>Urgent</option>
+      <button type="All Todos" id="default-filter" data-filter="default">All Todos</button>
+      <select class="custom-filter" id="priority-filter" data-filter="priority">
+        <option value="default">Priority</option>
+        <option value="no-priority">No Priority</option>
+        <option value="important">Important</option>
+        <option value="urgent">Urgent</option>
       </select>
-      <select class="custom-filter" id="status-filter">
-        <option>Not Started</option>
-        <option>In Progress</option>
-        <option>Done</option>
+      <select class="custom-filter" id="status-filter" data-filter="status">
+        <option value="default">Status</option>
+        <option value="not-started">Not Started</option>
+        <option value="in-progress">In Progress</option>
+        <option value="done">Done</option>
       </select>
-      <select class="custom-filter" id="categories-filter">
-        <option>Uncategorized</option>
+      <select class="custom-filter" id="categories-filter" data-filter="category">
+        <option value="default">Category</option>
+        <option value="uncategorized">Uncategorized</option>
       </select>
       <button type="button" id="add-category">Add Category</button>
     </section>
