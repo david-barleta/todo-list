@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>orderly</title>
+<script defer src="main2b2a7212a484562ff60a.js"></script></head>
+<body>
+  <header id="header">
+    <h1>orderly</h1>
+  </header>
+  <nav id="nav-bar">
+    <section id="categories">
+      <button type="All Todos" id="default-filter" data-filter="default">All Todos</button>
+      <select class="custom-filter" id="priority-filter" data-filter="priority">
+        <option value="default">Priority</option>
+        <option value="no-priority">No Priority</option>
+        <option value="important">Important</option>
+        <option value="urgent">Urgent</option>
+      </select>
+      <select class="custom-filter" id="status-filter" data-filter="status">
+        <option value="default">Status</option>
+        <option value="not-started">Not Started</option>
+        <option value="in-progress">In Progress</option>
+        <option value="done">Done</option>
+      </select>
+      <select class="custom-filter" id="categories-filter" data-filter="category">
+        <option value="default">Category</option>
+        <option value="uncategorized">Uncategorized</option>
+      </select>
+      <button type="button" id="add-category">Add Category</button>
+    </section>
+    <button id="new-todo-btn">New To-do</button>
+  </nav>
+  <main id="todos-view">
+    <!-- <div class="todo-item">
+      <div class="title">Mag relapse sa ex</div>
+      <div class="property category">Personal</div>
+      <div class="property priority no-priority">No Priority</div>
+      <div class="property status in-progress">In Progress</div>
+      <div class="property due-date">Jan. 21, 2024</div>
+    </div> -->
+  </main>
+  <template id="todo-item-template">
+    <div class="todo-item">
+      <div class="title"></div>
+      <div class="property category"></div>
+      <div class="property priority"></div>
+      <div class="property status"></div>
+      <div class="property due-date"></div>
+    </div>
+  </template>
+  <template id="new-todo-template">
+    <div id="overlay"> <!--Change to class?-->
+      <div class="todo-modal" id="new-todo-modal">
+        <form>
+          <div>
+            <input type="text" id="title" name="title" placeholder="Untitled Todo" required />
+          </div>
+          <div id="properties">
+            <div>
+              <label for="category">Category</label>
+              <select name="category" id="category" required>
+              </select>
+            </div>
+            <div>
+              <label for="priority">Priority</label>
+              <select name="priority" id="priority" required>
+                <option value="no-priority">No Priority</option>
+                <option value="important">Important</option>
+                <option value="urgent">Urgent</option>
+              </select>
+            </div>
+            <div>
+              <label for="status">Status</label>
+              <select name="status" id="status" required>
+                <option value="not-started">Not Started</option>
+                <option value="in-progress">In Progress</option>
+                <option value="done">Done</option>
+              </select>
+            </div>
+            <div>
+              <label for="dueDate">Due Date</label>
+              <input type="date" id="dueDate" name="dueDate" required />
+            </div>
+          </div>
+          <button type="button" id="cancel-btn">✕</button>
+          <button type="submit" class="submit-btn">Done</button>
+        </form>
+      </div>
+    </div>
+  </template>
+  <template id="edit-todo-template">
+    <div id="overlay">
+      <div class="todo-modal" id="edit-todo-modal">
+        <form>
+          <div>
+            <input type="text" id="title" name="title" placeholder="Untitled Todo" required />
+          </div>
+          <div id="properties">
+            <div>
+              <label for="category">Category</label>
+              <select name="category" id="category" required>
+              </select>
+            </div>
+            <div>
+              <label for="priority">Priority</label>
+              <select name="priority" id="priority" required>
+                <option value="no-priority">No Priority</option>
+                <option value="important">Important</option>
+                <option value="urgent">Urgent</option>
+              </select>
+            </div>
+            <div>
+              <label for="status">Status</label>
+              <select name="status" id="status" required>
+                <option value="not-started">Not Started</option>
+                <option value="in-progress">In Progress</option>
+                <option value="done">Done</option>
+              </select>
+            </div>
+            <div>
+              <label for="dueDate">Due Date</label>
+              <input type="date" id="dueDate" name="dueDate" required />
+            </div>
+          </div>
+          <button type="button" id="delete-btn">Delete</button>
+          <button type="submit" class="submit-btn">Done</button>
+        </form>
+      </div>
+    </div>
+  </template>
+  <template id="edit-categories-template">
+    <div id="overlay">
+      <div class="todo-modal" id="edit-categories-modal">
+        <div id="custom-categories">
+        </div>
+        <div id="add-category-div">
+          <input type="text" id="add-category-input" placeholder="New Category">
+          <button type="button" id="add-category-btn">Add</button>
+        </div>
+        <button type="button" id="cancel-btn">✕</button>
+      </div>
+    </div>
+  </template>
+  <!-- <div id="overlay">
+    <div class="todo-modal" id="new-todo-modal">
+      <form>
+        <div>
+          <input type="text" id="title" name="title" placeholder="Untitled Todo" required />
+        </div>
+        <div id="properties">
+          <div>
+            <label for="category">Category</label>
+            <select name="category" id="category" required>
+              <option value="uncategorized">Uncategorized</option>
+            </select>
+          </div>
+          <div>
+            <label for="priority">Priority</label>
+            <select name="priority" id="priority" required>
+              <option value="no-priority">No Priority</option>
+              <option value="important">Important</option>
+              <option value="urgent">Urgent</option>
+            </select>
+          </div>
+          <div>
+            <label for="status">Status</label>
+            <select name="status" id="status" required>
+              <option value="not-started">Not Started</option>
+              <option value="in-progress">In Progress</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+          <div>
+            <label for="dueDate">Due Date</label>
+            <input type="date" id="dueDate" name="dueDate" required />
+          </div>
+        </div>
+        <button type="button" id="cancel-btn">✕</button>
+        <button type="submit" id="add-todo-btn">Done</button>
+      </form>
+    </div>
+  </div> -->
+  <!-- <div id="overlay">
+      <div class="todo-modal" id="edit-todo-modal">
+        <form>
+          <div>
+            <input type="text" id="title" name="title" placeholder="Untitled Todo" required />
+          </div>
+          <div id="properties">
+            <div>
+              <label for="category">Category</label>
+              <select name="category" id="category" required>
+                <option value="uncategorized">Uncategorized</option>
+              </select>
+            </div>
+            <div>
+              <label for="priority">Priority</label>
+              <select name="priority" id="priority" required>
+                <option value="no-priority">No Priority</option>
+                <option value="important">Important</option>
+                <option value="urgent">Urgent</option>
+              </select>
+            </div>
+            <div>
+              <label for="status">Status</label>
+              <select name="status" id="status" required>
+                <option value="not-started">Not Started</option>
+                <option value="in-progress">In Progress</option>
+                <option value="done">Done</option>
+              </select>
+            </div>
+            <div>
+              <label for="dueDate">Due Date</label>
+              <input type="date" id="dueDate" name="dueDate" required />
+            </div>
+          </div>
+          <button type="button" id="delete-btn">Delete</button>
+          <button type="submit" id="add-todo-btn">Done</button>
+        </form>
+      </div>
+    </div> -->
+    <!-- <div id="overlay">
+      <div class="todo-modal" id="edit-categories-modal">
+        <div id="custom-categories">
+          <div>
+            <div class="category">Uncategorized</div>
+            <button type="button" class="delete-btn">Delete</button>
+          </div>
+          <div>
+            <div class="category">Test Category</div>
+            <button type="button" class="delete-btn">Delete</button>
+          </div>
+        </div>
+        <div id="add-category-input">
+          <input type="text" placeholder="New Category">
+          <button type="button" id="add-category-btn">Add</button>
+        </div>
+      </div>
+    </div> -->
+</body>
+</html>
