@@ -5,47 +5,110 @@
 
 const todos = [
   {
-    "title": "Test 1",
+    "title": "School task",
     "category": "uncategorized",
     "priority": "important",
     "status": "in-progress",
-    "dueDate": "2024-02-10"
+    "dueDate": "2021-12-06"
   },
   {
-    "title": "Test 2",
+    "title": "Work task",
     "category": "uncategorized",
     "priority": "urgent",
     "status": "in-progress",
-    "dueDate": "2024-02-10"
+    "dueDate": "2021-12-06"
   },
   {
-    "title": "Test 3",
+    "title": "Hobby task",
     "category": "uncategorized",
     "priority": "important",
     "status": "in-progress",
-    "dueDate": "2024-02-10"
+    "dueDate": "2021-12-06"
   },
   {
-    "title": "Test 4",
+    "title": "School task",
     "category": "uncategorized",
     "priority": "urgent",
     "status": "done",
-    "dueDate": "2024-02-10"
+    "dueDate": "2021-12-06"
   },
   {
-    "title": "Test 5",
+    "title": "Work task",
     "category": "uncategorized",
     "priority": "important",
     "status": "done",
-    "dueDate": "2024-02-10"
+    "dueDate": "2021-12-06"
   },
   {
-    "title": "Test 6",
+    "title": "Hobby task",
     "category": "uncategorized",
     "priority": "urgent",
     "status": "done",
-    "dueDate": "2024-02-10"
-  }
+    "dueDate": "2021-12-06"
+  },
+    {
+    "title": "Work task",
+    "category": "uncategorized",
+    "priority": "important",
+    "status": "done",
+    "dueDate": "2021-12-06"
+  },
+      {
+    "title": "Work task",
+    "category": "uncategorized",
+    "priority": "important",
+    "status": "done",
+    "dueDate": "2021-12-06"
+  },
+        {
+    "title": "Work task",
+    "category": "uncategorized",
+    "priority": "important",
+    "status": "done",
+    "dueDate": "2021-12-06"
+  },
+          {
+    "title": "Work task",
+    "category": "uncategorized",
+    "priority": "important",
+    "status": "done",
+    "dueDate": "2021-12-06"
+  },
+            {
+    "title": "Work task",
+    "category": "uncategorized",
+    "priority": "important",
+    "status": "done",
+    "dueDate": "2021-12-06"
+  },
+              {
+    "title": "Work task",
+    "category": "uncategorized",
+    "priority": "important",
+    "status": "done",
+    "dueDate": "2021-12-06"
+  },
+                {
+    "title": "Work task",
+    "category": "uncategorized",
+    "priority": "important",
+    "status": "done",
+    "dueDate": "2021-12-06"
+  },
+                  {
+    "title": "Work task",
+    "category": "uncategorized",
+    "priority": "important",
+    "status": "done",
+    "dueDate": "2021-12-06"
+  },
+                    {
+    "title": "Work task",
+    "category": "uncategorized",
+    "priority": "important",
+    "status": "done",
+    "dueDate": "2021-12-06"
+  },
 ];
 
 const customCategories = {
