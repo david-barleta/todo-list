@@ -973,9 +973,13 @@ function deleteCategory(event) {
 
   (0,_localStorageHandler__WEBPACK_IMPORTED_MODULE_1__.saveCustomCategories)();
 
-  const displayEvent = new Event("displayCategories");
+  const displayCategoriesModal = new Event("displayCategories");
 
-  categoriesFilter.dispatchEvent(displayEvent);
+  categoriesFilter.dispatchEvent(displayCategoriesModal);
+
+  const displayCategoriesFilter = new Event("displayCategoriesInFilter");
+
+  categoriesFilter.dispatchEvent(displayCategoriesFilter);
 }
 
 function displayCategoriesInModal() {
@@ -1336,41 +1340,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   statusList: () => (/* binding */ statusList),
 /* harmony export */   todos: () => (/* binding */ todos)
 /* harmony export */ });
-// 1, 3, 5 important
-// 2, 4, 6 urgent
-// 1, 2, 3 in-progress
-// 4, 5, 6 done
-
-const todos = [
-  {
-    "title": "Uncategorized task",
-    "category": "uncategorized",
-    "priority": "important",
-    "status": "in-progress",
-    "dueDate": "2021-12-06"
-  },
-  {
-    "title": "School task",
-    "category": "uncategorized",
-    "priority": "urgent",
-    "status": "in-progress",
-    "dueDate": "2021-12-06"
-  },
-  {
-    "title": "Work task",
-    "category": "uncategorized",
-    "priority": "important",
-    "status": "in-progress",
-    "dueDate": "2021-12-06"
-  },
-  {
-    "title": "Hobby task",
-    "category": "uncategorized",
-    "priority": "urgent",
-    "status": "done",
-    "dueDate": "2021-12-06"
-  }
-];
+const todos = [];
 
 const customCategories = {
   "default": "Category",
@@ -1609,4 +1579,4 @@ categoriesFilter.dispatchEvent(displayEvent);
 
 /******/ })()
 ;
-//# sourceMappingURL=main7a67cf978827f2e892cf.js.map
+//# sourceMappingURL=mainfadf5b99554d19c0d88c.js.map

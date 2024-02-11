@@ -1,38 +1,4 @@
-// 1, 3, 5 important
-// 2, 4, 6 urgent
-// 1, 2, 3 in-progress
-// 4, 5, 6 done
-
-const todos = [
-  {
-    "title": "Uncategorized task",
-    "category": "uncategorized",
-    "priority": "important",
-    "status": "in-progress",
-    "dueDate": "2021-12-06"
-  },
-  {
-    "title": "School task",
-    "category": "uncategorized",
-    "priority": "urgent",
-    "status": "in-progress",
-    "dueDate": "2021-12-06"
-  },
-  {
-    "title": "Work task",
-    "category": "uncategorized",
-    "priority": "important",
-    "status": "in-progress",
-    "dueDate": "2021-12-06"
-  },
-  {
-    "title": "Hobby task",
-    "category": "uncategorized",
-    "priority": "urgent",
-    "status": "done",
-    "dueDate": "2021-12-06"
-  }
-];
+const todos = [];
 
 const customCategories = {
   "default": "Category",

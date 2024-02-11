@@ -22,9 +22,13 @@ function deleteCategory(event) {
 
   saveCustomCategories();
 
-  const displayEvent = new Event("displayCategories");
+  const displayCategoriesModal = new Event("displayCategories");
 
-  categoriesFilter.dispatchEvent(displayEvent);
+  categoriesFilter.dispatchEvent(displayCategoriesModal);
+
+  const displayCategoriesFilter = new Event("displayCategoriesInFilter");
+
+  categoriesFilter.dispatchEvent(displayCategoriesFilter);
 }
 
 function displayCategoriesInModal() {
