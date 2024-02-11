@@ -4,16 +4,12 @@ function saveTodos() {
   const dataToSave = JSON.stringify(todos);
 
   localStorage.setItem("todosStorage", dataToSave);
-
-  console.log(`saved: ${dataToSave}`);
 }
 
 function saveCustomCategories() {
   const dataToSave = JSON.stringify(customCategories);
 
   localStorage.setItem("categoriesStorage", dataToSave);
-
-  console.log(`saved: ${dataToSave}`);
 }
 
 if (!localStorage.getItem("todosStorage") && !localStorage.getItem("categoriesStorage")) {

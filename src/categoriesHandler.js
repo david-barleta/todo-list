@@ -23,10 +23,11 @@ function deleteCategory(event) {
   saveCustomCategories();
 
   const displayEvent = new Event("displayCategories");
+
   categoriesFilter.dispatchEvent(displayEvent);
 }
 
-function displayCategories() {
+function displayCategoriesInModal() {
   const customCategoriesArray = Object.keys(customCategories);
 
   for (let i = 1; i < customCategoriesArray.length; i += 1) {
@@ -55,6 +56,20 @@ function displayCategories() {
   }
 }
 
+function displayCategoriesInFilter() {
+  categoriesFilter.replaceChildren();
+
+  const customCategoriesArray = Object.keys(customCategories);
+
+  for (let i = 0; i < customCategoriesArray.length; i += 1) {
+    const option = document.createElement("option");
+    option.textContent = `${customCategories[customCategoriesArray[i]]}`;
+    option.setAttribute("value", customCategoriesArray[i]);
+
+    categoriesFilter.appendChild(option);
+  }
+}
+
 function handleAddCategory() {
   const newCategoryLabel = document.querySelector("#add-category-input");
 
@@ -67,23 +82,13 @@ function handleAddCategory() {
 
     newCategoryLabel.value = "";
 
-    const displayEvent = new Event("displayCategories");
+    const displayCategoriesModal = new Event("displayCategories");
 
-    categoriesFilter.dispatchEvent(displayEvent);
+    categoriesFilter.dispatchEvent(displayCategoriesModal);
 
-    categoriesFilter.replaceChildren();
+    const displayCategoriesFilter = new Event("displayCategoriesInFilter");
 
-    const customCategoriesArray = Object.keys(customCategories);
-
-    for (let i = 0; i < customCategoriesArray.length; i += 1) {
-
-      const option = document.createElement("option");
-      option.textContent = `${customCategories[customCategoriesArray[i]]}`;
-      option.setAttribute("value", customCategoriesArray[i]);
-
-
-      categoriesFilter.appendChild(option);
-    }
+    categoriesFilter.dispatchEvent(displayCategoriesFilter);
   }
 }
 
@@ -122,5 +127,9 @@ document.querySelector("#add-category").addEventListener("click", () => {
 
 categoriesFilter.addEventListener("displayCategories", () => {
   clearCategories();
-  displayCategories();
+  displayCategoriesInModal();
+}, false);
+
+categoriesFilter.addEventListener("displayCategoriesInFilter", () => {
+  displayCategoriesInFilter();
 }, false);
